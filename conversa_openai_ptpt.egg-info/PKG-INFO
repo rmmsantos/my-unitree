@@ -1,0 +1,98 @@
+Metadata-Version: 2.4
+Name: conversa-openai-ptpt
+Version: 0.1.0
+Summary: Cliente de terminal para conversar com a OpenAI em português de Portugal
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: openai<3,>=1.66.0
+Requires-Dist: python-dotenv<2,>=1.0.1
+Requires-Dist: sounddevice<1,>=0.5.1
+Requires-Dist: websocket-client<2,>=1.8.0
+
+# Conversa OpenAI em português de Portugal
+
+Uma aplicação Python para manter uma conversa de voz natural no terminal com a
+Realtime API da OpenAI. O áudio é enviado e recebido continuamente, sem uma
+etapa separada de gravação, transcrição e síntese. A conversa mantém contexto,
+deteta automaticamente os turnos e permite interromper o assistente enquanto
+este fala.
+
+## Requisitos
+
+- Python 3.10 ou superior
+- Uma API key da OpenAI
+- Microfone e saída de áudio
+
+> A utilização da API é faturada separadamente de uma subscrição do ChatGPT.
+> Consulta os limites e preços da tua conta antes de utilizar a aplicação.
+
+## Instalação
+
+Cria e ativa um ambiente virtual:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+No Windows PowerShell, o segundo comando é:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+Instala o projeto:
+
+```bash
+python -m pip install -e .
+```
+
+Cria o ficheiro de configuração:
+
+```bash
+cp .env.example .env
+```
+
+Abre `.env` e substitui `coloca_a_tua_api_key_aqui` pela tua chave. Nunca
+partilhes nem guardes a chave num commit; o ficheiro `.env` já está excluído
+pelo `.gitignore`.
+
+## Utilização
+
+```bash
+conversa
+```
+
+Começa a falar quando surgir a indicação `Sessão pronta`. Não é necessário
+premir teclas entre turnos e pode interromper uma resposta falando por cima.
+Usa `Ctrl+C` para terminar a sessão.
+
+Os modelos e a voz podem ser alterados em `.env`:
+
+```dotenv
+OPENAI_REALTIME_MODEL=gpt-realtime-2.1
+OPENAI_REALTIME_VOICE=marin
+```
+
+O microfone e a saída usam PCM mono a 24 kHz. As instruções da sessão pedem
+português europeu (`pt-PT`) e respostas curtas, adequadas a voz. Auscultadores
+são recomendados para evitar que o microfone capte a voz do assistente.
+
+> A voz reproduzida é gerada por inteligência artificial. A aplicação mostra
+> este aviso ao arrancar, conforme exigido para texto-para-voz.
+
+## Testes
+
+Os testes não usam a API nem consomem créditos:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+## Estrutura
+
+```text
+conversa/cli.py   arranque e configuração
+conversa/voz.py   sessão Realtime, microfone, reprodução e interrupções
+tests/             testes unitários sem acesso à rede
+```

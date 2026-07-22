@@ -1,0 +1,2 @@
+[console_scripts]
+conversa = conversa.cli:main

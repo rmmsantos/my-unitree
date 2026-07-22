@@ -1,0 +1,85 @@
+Metadata-Version: 2.4
+Name: conversa-openai-ptpt
+Version: 0.1.0
+Summary: Cliente de terminal para conversar com a OpenAI em português de Portugal
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: openai<3,>=1.66.0
+Requires-Dist: python-dotenv<2,>=1.0.1
+
+# Conversa OpenAI em português de Portugal
+
+Uma aplicação Python simples para conversar no terminal com um modelo da
+OpenAI. A conversa mantém o contexto e instrui o modelo a responder em
+português europeu (`pt-PT`).
+
+## Requisitos
+
+- Python 3.10 ou superior
+- Uma API key da OpenAI
+
+> A utilização da API é faturada separadamente de uma subscrição do ChatGPT.
+> Consulta os limites e preços da tua conta antes de utilizar a aplicação.
+
+## Instalação
+
+Cria e ativa um ambiente virtual:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+No Windows PowerShell, o segundo comando é:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+Instala o projeto:
+
+```bash
+python -m pip install -e .
+```
+
+Cria o ficheiro de configuração:
+
+```bash
+cp .env.example .env
+```
+
+Abre `.env` e substitui `coloca_a_tua_api_key_aqui` pela tua chave. Nunca
+partilhes nem guardes a chave num commit; o ficheiro `.env` já está excluído
+pelo `.gitignore`.
+
+## Utilização
+
+```bash
+conversa
+```
+
+Durante a conversa:
+
+- `/novo` limpa o contexto e começa uma conversa nova;
+- `/sair` termina o programa;
+- `Ctrl+C` também termina de forma segura.
+
+O modelo pode ser alterado em `.env` através de `OPENAI_MODEL`. O valor inicial
+é `gpt-5.6-terra`; se esse modelo não estiver disponível na tua conta, escolhe
+outro modelo de texto a que tenhas acesso.
+
+## Testes
+
+Os testes não usam a API nem consomem créditos:
+
+```bash
+PYTHONPATH=src python -m unittest discover -s tests -v
+```
+
+## Estrutura
+
+```text
+src/conversa/cli.py   interface de terminal e configuração
+src/conversa/chat.py  contexto e chamadas à Responses API
+tests/test_chat.py    testes unitários sem acesso à rede
+```

@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+conversa/__init__.py
+conversa/chat.py
+conversa/cli.py
+conversa/voz.py
+conversa_openai_ptpt.egg-info/PKG-INFO
+conversa_openai_ptpt.egg-info/SOURCES.txt
+conversa_openai_ptpt.egg-info/dependency_links.txt
+conversa_openai_ptpt.egg-info/entry_points.txt
+conversa_openai_ptpt.egg-info/requires.txt
+conversa_openai_ptpt.egg-info/top_level.txt
+tests/test_chat.py
+tests/test_voz.py
