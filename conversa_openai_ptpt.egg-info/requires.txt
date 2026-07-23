@@ -1,4 +1,0 @@
-openai<3,>=1.66.0
-python-dotenv<2,>=1.0.1
-sounddevice<1,>=0.5.1
-websocket-client<2,>=1.8.0

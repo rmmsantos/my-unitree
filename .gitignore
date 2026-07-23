@@ -1,7 +1,11 @@
 .env
 .venv/
+.deps/
+*.egg-info/
+build/
+dist/
 __pycache__/
 *.py[cod]
 .pytest_cache/
 .ruff_cache/
-
+.mypy_cache/

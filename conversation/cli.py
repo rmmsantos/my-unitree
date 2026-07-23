@@ -1,0 +1,165 @@
+"""Command-line interface."""
+
+from __future__ import annotations
+
+import argparse
+import os
+import sys
+
+import sounddevice as sd
+
+from my_unitree.configuration import (
+    find_project_root,
+    load_project_configuration,
+)
+from conversation.voice import (
+    REALTIME_VOICES,
+    RECOMMENDED_REALTIME_VOICES,
+    RealtimeVoice,
+)
+
+
+PROJECT_ROOT = find_project_root()
+
+
+def build_parser() -> argparse.ArgumentParser:
+    """Build the voice conversation command parser."""
+    parser = argparse.ArgumentParser(
+        prog="conversation",
+        description="Run an OpenAI Realtime voice conversation.",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    )
+    voice_options = parser.add_mutually_exclusive_group()
+    voice_options.add_argument(
+        "--voice",
+        type=str.lower,
+        choices=REALTIME_VOICES,
+        help="voice for this conversation; overrides OPENAI_REALTIME_VOICE",
+    )
+    voice_options.add_argument(
+        "--list-voices",
+        action="store_true",
+        help="list supported Realtime voices and exit",
+    )
+    return parser
+
+
+def print_voices() -> None:
+    """Print the supported Realtime voices without connecting to the API."""
+    load_configuration()
+    configured = os.getenv("OPENAI_REALTIME_VOICE", "marin").strip().lower()
+    print("Available OpenAI Realtime voices:")
+    for voice in REALTIME_VOICES:
+        labels = []
+        if voice in RECOMMENDED_REALTIME_VOICES:
+            labels.append("recommended")
+        if voice == configured:
+            labels.append("configured")
+        suffix = f" ({', '.join(labels)})" if labels else ""
+        print(f"  {voice}{suffix}")
+    if configured not in REALTIME_VOICES:
+        print(f"\nConfigured voice {configured!r} is not supported.")
+
+
+def load_configuration() -> None:
+    """Load the project environment and locate the local CycloneDDS build."""
+    load_project_configuration(PROJECT_ROOT)
+
+
+def require_api_key() -> str:
+    """Return the configured API key or raise a useful setup error."""
+    api_key = os.getenv("OPENAI_API_KEY", "").strip()
+    if not api_key or api_key == "replace_with_your_api_key":
+        raise RuntimeError(
+            "OPENAI_API_KEY is missing. Copy .env.example to .env and add your key."
+        )
+    return api_key
+
+
+def create_realtime_voice(voice_override: str | None = None) -> RealtimeVoice:
+    """Create the configured realtime voice conversation."""
+    load_configuration()
+    model = os.getenv("OPENAI_REALTIME_MODEL", "gpt-realtime-2.1").strip()
+    voice = (
+        voice_override
+        if voice_override is not None
+        else os.getenv("OPENAI_REALTIME_VOICE", "marin")
+    ).strip().lower()
+    audio_backend = os.getenv("AUDIO_BACKEND", "local").strip().lower()
+    interface_ip = os.getenv("UNITREE_INTERFACE_IP", "192.168.123.164").strip()
+    network_interface = os.getenv("UNITREE_NETWORK_INTERFACE", "eth0").strip()
+    microphone_group = os.getenv(
+        "UNITREE_MIC_MULTICAST_GROUP", "239.168.123.161"
+    ).strip()
+    debug_value = os.getenv("AUDIO_DEBUG", "false").strip().lower()
+    audio_debug = debug_value in {"1", "true", "yes"}
+    behavior_tools_value = os.getenv(
+        "ROBOT_BEHAVIOR_TOOLS_ENABLED",
+        "true",
+    ).strip().lower()
+    robot_behavior_tools_enabled = behavior_tools_value in {
+        "1",
+        "true",
+        "yes",
+    }
+    knowledge_tools_value = os.getenv(
+        "COMPANY_KNOWLEDGE_TOOLS_ENABLED",
+        "true",
+    ).strip().lower()
+    company_knowledge_tools_enabled = knowledge_tools_value in {
+        "1",
+        "true",
+        "yes",
+    }
+    company_knowledge_path = os.getenv(
+        "COMPANY_KNOWLEDGE_PATH",
+        str(PROJECT_ROOT / "conversation" / "knowledge" / "digitalsign.json"),
+    ).strip()
+
+    return RealtimeVoice(
+        api_key=require_api_key(),
+        model=model,
+        voice=voice,
+        audio_backend=audio_backend,
+        unitree_interface_ip=interface_ip,
+        unitree_network_interface=network_interface,
+        unitree_microphone_group=microphone_group,
+        unitree_microphone_port=int(os.getenv("UNITREE_MIC_PORT", "5555")),
+        audio_debug=audio_debug,
+        robot_behavior_tools_enabled=robot_behavior_tools_enabled,
+        company_knowledge_tools_enabled=company_knowledge_tools_enabled,
+        company_knowledge_path=company_knowledge_path,
+    )
+
+
+def main(argv: list[str] | None = None) -> int:
+    """Run the interactive realtime voice client."""
+    args = build_parser().parse_args(argv)
+    if args.list_voices:
+        print_voices()
+        return 0
+
+    try:
+        conversation = create_realtime_voice(args.voice)
+    except (RuntimeError, ValueError) as error:
+        print(f"Configuration error: {error}", file=sys.stderr)
+        return 1
+
+    print("OpenAI voice conversation in European Portuguese")
+    print("The voice you hear is generated by artificial intelligence.")
+    try:
+        conversation.run()
+    except KeyboardInterrupt:
+        print("\nGoodbye!")
+        return 0
+    except (RuntimeError, ValueError) as error:
+        print(f"Error: {error}", file=sys.stderr)
+        return 1
+    except (OSError, sd.PortAudioError) as error:
+        print(f"Audio device error: {error}", file=sys.stderr)
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

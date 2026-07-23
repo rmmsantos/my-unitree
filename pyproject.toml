@@ -3,21 +3,26 @@ requires = ["setuptools>=69"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "conversa-openai-ptpt"
-version = "0.1.0"
-description = "Cliente de terminal para conversar com a OpenAI em português de Portugal"
+name = "my-unitree"
+version = "0.4.0"
+description = "Unitree G1 controls, diagnostics, and OpenAI voice conversation"
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
-    "openai>=1.66.0,<2",
+    "opencv-python-headless>=4.8,<5",
     "python-dotenv>=1.0.1,<1.1",
     "sounddevice>=0.5.1,<1",
     "websocket-client>=1.8.0,<1.9",
 ]
 
 [project.scripts]
-conversa = "conversa.cli:main"
+conversation = "conversation.cli:main"
+diagnostics = "diagnostics.cli:main"
+robot = "robot.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["conversa*"]
+include = ["conversation*", "diagnostics*", "my_unitree*", "robot*"]
+
+[tool.setuptools.package-data]
+conversation = ["knowledge/*.json"]

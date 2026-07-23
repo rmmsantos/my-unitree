@@ -1,9 +1,0 @@
-README.md
-pyproject.toml
-src/conversa_openai_ptpt.egg-info/PKG-INFO
-src/conversa_openai_ptpt.egg-info/SOURCES.txt
-src/conversa_openai_ptpt.egg-info/dependency_links.txt
-src/conversa_openai_ptpt.egg-info/entry_points.txt
-src/conversa_openai_ptpt.egg-info/requires.txt
-src/conversa_openai_ptpt.egg-info/top_level.txt
-tests/test_chat.py

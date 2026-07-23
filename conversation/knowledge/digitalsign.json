@@ -1,0 +1,280 @@
+{
+  "organization": "DigitalSign",
+  "updated": "2026-07-23",
+  "entries": [
+    {
+      "id": "overview",
+      "title": "Quem é a DigitalSign",
+      "keywords": [
+        "DigitalSign",
+        "empresa",
+        "organização",
+        "quem é",
+        "o que faz",
+        "Portugal",
+        "QTSP",
+        "eIDAS"
+      ],
+      "content": "A DigitalSign é um Prestador Qualificado de Serviços de Confiança, ou QTSP, com sede em Portugal. É reconhecida na União Europeia através da EU Trusted List e acreditada no Brasil como Autoridade Certificadora no âmbito da ICP-Brasil. Apoia organizações e cidadãos na identificação, autenticação e assinatura digital com segurança e valor legal. Desde 2022 integra o Grupo Logalty.",
+      "source_urls": [
+        "https://www.digitalsign.pt/ds/sobre-nos/"
+      ]
+    },
+    {
+      "id": "history",
+      "title": "História da DigitalSign",
+      "keywords": [
+        "história",
+        "fundação",
+        "fundada",
+        "2001",
+        "autoridade certificadora",
+        "Portugal"
+      ],
+      "content": "A página institucional atual da DigitalSign indica atividade desde 2005 e mais de 20 anos de experiência. Um comunicado oficial de 2017 refere que a empresa foi fundada em 2001 e que foi a primeira Autoridade Certificadora em Portugal. Desde 2022, a DigitalSign integra o Grupo Logalty.",
+      "source_urls": [
+        "https://www.digitalsign.pt/ds/sobre-nos/",
+        "https://www.digitalsign.pt/media/files/Downloads/pm_digitalsign_idnow.pdf"
+      ]
+    },
+    {
+      "id": "services",
+      "title": "Produtos e serviços da DigitalSign",
+      "keywords": [
+        "serviços",
+        "produtos",
+        "soluções",
+        "catálogo",
+        "portefólio",
+        "certificados",
+        "certificação digital",
+        "assinatura eletrónica",
+        "identidade",
+        "confiança",
+        "eIDAS"
+      ],
+      "content": "O portefólio da DigitalSign inclui Identidade e Onboarding com ID Check, DS EUDI Wallet, DS SigningDesk, DS Verify, Faturação Eletrónica, DS Invoice & Docs, DS Sign & Go e DS Grafométrica. Inclui também certificados digitais qualificados e avançados, selos eletrónicos, selos temporais e certificados SSL.",
+      "source_urls": [
+        "https://www.digitalsign.pt/ds/",
+        "https://www.digitalsign.pt/pt/certificado-digital"
+      ]
+    },
+    {
+      "id": "product-id-check",
+      "title": "ID Check — Identidade e Onboarding",
+      "keywords": [
+        "ID Check",
+        "identidade",
+        "onboarding",
+        "KYC",
+        "validação de identidade",
+        "reconhecimento facial",
+        "biometria",
+        "prova de vida",
+        "liveness",
+        "documento de identificação",
+        "passaporte"
+      ],
+      "content": "O ID Check é a solução de onboarding e validação remota de identidade da DigitalSign. Valida documentos de identificação e passaportes de mais de 200 países, extrai os respetivos dados e combina prova de vida com comparação biométrica facial. Funciona sem agendamento ou intervenção humana e pode ainda recolher documentos complementares e integrar a emissão de certificados ou a DS EUDI Wallet.",
+      "source_urls": [
+        "https://www.digitalsign.pt/ds/servicos/identidade-e-onboarding/"
+      ]
+    },
+    {
+      "id": "product-eudi-wallet",
+      "title": "DS EUDI Wallet",
+      "keywords": [
+        "DS EUDI Wallet",
+        "EUDI Wallet",
+        "wallet",
+        "carteira digital",
+        "identidade digital europeia",
+        "credenciais",
+        "passwordless",
+        "SSO",
+        "recursos humanos",
+        "controlo de acessos"
+      ],
+      "content": "A DS EUDI Wallet é a solução empresarial da DigitalSign para a Carteira Europeia de Identidade Digital. Pode guardar identidade, funções, poderes de representação, autorizações e qualificações dos colaboradores, apoiando todo o ciclo desde o onboarding até à revogação no offboarding. Permite autenticação sem palavra-passe, assinatura qualificada e integração com sistemas de identidade, aplicações empresariais e controlo de acessos.",
+      "source_urls": [
+        "https://www.digitalsign.pt/ds/servicos/ds-wallet/"
+      ]
+    },
+    {
+      "id": "product-signingdesk",
+      "title": "DS SigningDesk",
+      "keywords": [
+        "DS SigningDesk",
+        "SigningDesk",
+        "contratação eletrónica",
+        "assinatura eletrónica",
+        "assinar contratos",
+        "assinatura remota",
+        "workflow",
+        "API",
+        "CRM",
+        "ERP"
+      ],
+      "content": "O DS SigningDesk é uma plataforma de contratação e assinatura eletrónica para enviar e assinar documentos remotamente com valor legal. Suporta assinaturas simples, avançadas, qualificadas e biométricas, bem como revisão, resumo e classificação documental com inteligência artificial. Pode ser personalizado e integrado por API REST com sistemas como CRM e ERP.",
+      "source_urls": [
+        "https://www.digitalsign.pt/ds/servicos/ds-signingdesk/"
+      ]
+    },
+    {
+      "id": "product-verify",
+      "title": "DS Verify — Validação, Arquivo e Preservação",
+      "keywords": [
+        "DS Verify",
+        "Verify",
+        "validar assinatura",
+        "validar selo",
+        "relatório de validação",
+        "arquivo eletrónico",
+        "preservação",
+        "longo prazo",
+        "LTA",
+        "autenticidade",
+        "integridade"
+      ],
+      "content": "O DS Verify valida assinaturas e selos qualificados e produz relatórios para auditoria ou aceitação formal. O serviço também permite arquivar e preservar documentos eletrónicos a longo prazo, mantendo a sua integridade, acessibilidade e valor probatório mesmo com a evolução dos algoritmos criptográficos. A pesquisa de documentos pode ser apoiada por inteligência artificial.",
+      "source_urls": [
+        "https://www.digitalsign.pt/ds/servicos/validacao-arquivo-e-preservacao/"
+      ]
+    },
+    {
+      "id": "product-electronic-invoicing",
+      "title": "Faturação Eletrónica",
+      "keywords": [
+        "faturação eletrónica",
+        "fatura eletrónica",
+        "faturas",
+        "CIUS-PT",
+        "PDF para XML",
+        "fraude",
+        "arquivo de faturas",
+        "preservação de faturas",
+        "ERP",
+        "API"
+      ],
+      "content": "A solução de Faturação Eletrónica da DigitalSign cobre a assinatura, transmissão, validação, arquivo e preservação legal das faturas. Permite confirmar legitimidade e conformidade CIUS-PT, detetar alterações e ajudar a prevenir fraude, incluindo mudanças indevidas de IBAN. Também disponibiliza integração por API e conversão assistida por inteligência artificial de faturas PDF para XML.",
+      "source_urls": [
+        "https://www.digitalsign.pt/ds/servicos/faturacao-eletronica/"
+      ]
+    },
+    {
+      "id": "product-invoice-docs",
+      "title": "DS Invoice & Docs",
+      "keywords": [
+        "DS Invoice & Docs",
+        "DS Invoice",
+        "Invoice & Docs",
+        "assinatura em lote",
+        "faturas em lote",
+        "documentos em lote",
+        "envio de faturas",
+        "ERP",
+        "HSM",
+        "selo eletrónico",
+        "selo temporal"
+      ],
+      "content": "O DS Invoice & Docs complementa sistemas ERP com assinatura ou selagem em lote e envio de faturas e outros documentos, incluindo ficheiros PDF. Destina-se também ao envio de extratos e documentos financeiros, comerciais ou de recursos humanos. Pode aplicar selos eletrónicos qualificados e selos temporais, mantendo histórico e validade legal.",
+      "source_urls": [
+        "https://www.digitalsign.pt/ds/servicos/ds-invoice-docs/"
+      ]
+    },
+    {
+      "id": "product-sign-go",
+      "title": "DS Sign & Go",
+      "keywords": [
+        "DS Sign & Go",
+        "DS Sign&Go",
+        "Sign and Go",
+        "assinar PDF",
+        "assinatura local",
+        "assinatura em lote",
+        "certificado cloud",
+        "PIN",
+        "OTP",
+        "LTV"
+      ],
+      "content": "O DS Sign & Go é uma aplicação autónoma para assinar ficheiros PDF sem depender de licenças de outras aplicações. Permite assinatura individual ou em lote, inclusive com certificados Cloud, autorização única por PIN ou OTP, personalização da representação visual, histórico e assinaturas de longo prazo. Está disponível para diferentes sistemas operativos e pode ser usado em português, inglês ou espanhol.",
+      "source_urls": [
+        "https://www.digitalsign.pt/ds/servicos/ds-sign-go/"
+      ]
+    },
+    {
+      "id": "product-graphometric",
+      "title": "DS Grafométrica",
+      "keywords": [
+        "DS Grafométrica",
+        "grafométrica",
+        "assinatura manuscrita",
+        "assinatura biométrica",
+        "tablet",
+        "dados biométricos",
+        "assinatura presencial",
+        "POS",
+        "consentimento RGPD"
+      ],
+      "content": "A DS Grafométrica recolhe assinaturas manuscritas em tablets para formulários, contratação, consentimento RGPD e processos presenciais. Além da imagem, regista de forma encriptada dados biométricos do movimento, como pressão, velocidade, duração, aceleração e direção. Estes dados ficam associados ao documento e podem permitir uma perícia grafométrica posterior.",
+      "source_urls": [
+        "https://www.digitalsign.pt/ds/servicos/ds-grafometrica/"
+      ]
+    },
+    {
+      "id": "product-certificates",
+      "title": "Certificados, selos e serviços de certificação",
+      "keywords": [
+        "certificado digital",
+        "certificado qualificado",
+        "certificado cloud",
+        "certificado avançado",
+        "certificado de representação",
+        "certificado de membro",
+        "certificado profissional",
+        "certificado individual",
+        "selo eletrónico",
+        "selo temporal",
+        "timestamp",
+        "SSL"
+      ],
+      "content": "A DigitalSign disponibiliza certificados digitais qualificados em Cloud ou noutros suportes, com variantes de representação, membro, profissional e individual. Disponibiliza ainda selos eletrónicos qualificados para documentos e faturação, certificados avançados, certificados SSL e selos temporais que certificam a hora legal de documentos e transações. Os certificados qualificados permitem assinaturas eletrónicas reconhecidas legalmente em Portugal e na União Europeia.",
+      "source_urls": [
+        "https://www.digitalsign.pt/pt/certificado-digital"
+      ]
+    },
+    {
+      "id": "presence",
+      "title": "Presença internacional",
+      "keywords": [
+        "presença",
+        "países",
+        "internacional",
+        "Europa",
+        "Brasil",
+        "Portugal"
+      ],
+      "content": "A DigitalSign tem sede em Portugal, é reconhecida na União Europeia através da EU Trusted List e está acreditada no Brasil como Autoridade Certificadora no âmbito da ICP-Brasil. A empresa indica ter mais de 160 colaboradores.",
+      "source_urls": [
+        "https://www.digitalsign.pt/ds/sobre-nos/"
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "Contactos da DigitalSign",
+      "keywords": [
+        "contacto",
+        "contactar",
+        "telefone",
+        "email",
+        "correio",
+        "suporte",
+        "site"
+      ],
+      "content": "O contacto geral publicado pela DigitalSign é geral@digitalsign.pt e o telefone é +351 253 560 642. O site oficial é https://www.digitalsign.pt/.",
+      "source_urls": [
+        "https://www.digitalsign.pt/ds/"
+      ]
+    }
+  ]
+}
